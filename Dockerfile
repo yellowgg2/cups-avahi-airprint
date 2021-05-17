@@ -34,6 +34,8 @@ VOLUME /services
 # Add scripts
 ADD root /
 RUN chmod +x /root/*
+RUN dpkg -i epson-inkjet-printer-201207w_1.0.0-1lsb3.2_amd64.deb
+RUN cp /opt/epson-inkjet-printer-201207w/cups/lib/filter/epson_inkjet_printer_filter /usr/lib/cups/filter
 
 #Run Script
 CMD ["/root/run_cups.sh"]
