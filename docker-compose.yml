@@ -1,0 +1,13 @@
+version: "3.3"
+services:
+  cups-avahi-airprint:
+    container_name: cups
+    restart: unless-stopped
+    network_mode: host
+    volumes:
+      - "./config:/config"
+      - "./services:/services"
+    environment:
+      - CUPSADMIN=admin
+      - CUPSPASSWORD=password
+    image: "yellowgg2/cups-avahi-airprint:latest"
