@@ -1,6 +1,7 @@
 version: "3.3"
 services:
   cups-avahi-airprint:
+    build: .
     container_name: cups
     restart: unless-stopped
     network_mode: host
